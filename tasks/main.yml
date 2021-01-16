@@ -1,0 +1,11 @@
+---
+
+- name: start Enterprise Controller
+  shell:  "{{ enterprise_controller_home }}/bin/platform-admin.sh start-platform-admin"
+  become: false
+  when: start_ec
+  
+- name: stop Enterprise Controller
+  shell:  "{{ enterprise_controller_home }}/bin/platform-admin.sh stop-platform-admin"
+  become: false
+  when: not start_ec
